@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ggqp.live</title>
+  <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=GGQP">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #3a2a24;
+      --secondary-bg: #16213e;
+      --accent: #ff007b;
+      --text: #ffffff;
+      --rules-bg: rgba(30, 30, 40, 0.9);
+      --high-contrast-bg: #1a1a1a;
+      --high-contrast-text: #f0f0f0;
+      /* Social media brand colors */
+      --color-youtube: rgba(229, 57, 53, 0.9);
+      --color-twitch: rgba(124, 77, 255, 0.9);
+      --color-twitter: rgba(29, 161, 242, 0.9);
+      --color-facebook: rgba(59, 89, 152, 0.9);
+      --color-discord: rgba(88, 101, 242, 0.9);
+      --color-telegram: rgba(0, 136, 204, 0.9);
+      --color-bluesky: rgba(0, 123, 255, 0.9);
+      --color-threads: rgba(63, 91, 132, 0.9);
+      --color-instagram: rgba(193, 53, 132, 0.9);
+      --color-reddit: rgba(255, 69, 0, 0.9);
+      --color-snapchat: rgba(255, 235, 59, 0.9);
+      --color-tiktok: rgba(172, 0, 97, 0.9);
+      --color-kick: rgba(0, 255, 0, 0.9);
+      --color-trovox: rgba(0, 204, 102, 0.9);
+      /* Crypto colors */
+      --color-bitcoin: #F7931A;
+      --color-ethereum: #3C3C3D;
+      /* Calendar button color */
+      --color-calendar: rgb(255, 0, 136);
+    }
+
+    [data-contrast="high"] {
+      --primary-bg: var(--high-contrast-bg);
+      --secondary-bg: var(--high-contrast-bg);
+      --text: var(--high-contrast-text);
+      --rules-bg: rgba(50, 50, 60, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-weight: 600; text-align: center; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; touch-action: manipulation; }
+
+    /* Main */
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    /* Title and Intro */
+    .intro {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro p {
+      max-width: 600px;
+      margin: 0.5rem auto;
+      font-size: 0.9rem;
+    }
+
+    /* Dropdown */
+    .streamer-select {
+      margin: 1.5rem 0;
+      width: 100%;
+      max-width: 20rem;
+    }
+
+    .dropdown {
+      position: relative;
+      width: 100%;
+    }
+
+    .dropdown__face {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown__face:hover, .dropdown__face:focus {
+      background: rgba(255, 255, 255, 0.2);
+      outline: none;
+      transform: translateY(-0.1rem);
+    }
+
+    .dropdown__text {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .dropdown__items {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 0.75rem);
+      width: 100%;
+      list-style: none;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 150;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(15px);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: slideDown 0.3s ease-in-out;
+    }
+
+    .dropdown__items.active {
+      display: flex;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-0.5rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dropdown__items li {
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 0.5rem;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-weight: 500;
+    }
+
+    .dropdown__items li:hover, .dropdown__items li:focus {
+      background: rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+
+    .dropdown__arrow {
+      border-bottom: 2px solid var(--text);
+      border-right: 2px solid var(--text);
+      width: 0.6rem;
+      height: 0.6rem;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown__face.active .dropdown__arrow {
+      transform: rotate(-135deg);
+    }
+
+    .streamer-content { 
+      display: none; 
+      opacity: 0; 
+      transition: opacity 0.3s; 
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .streamer-content.active { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      opacity: 1; 
+    }
+
+    .channel-info { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      margin-bottom: 1rem; 
+      gap: 1rem; 
+      text-align: center;
+    }
+
+    .channel-avatar img { 
+      width: 60px; 
+      height: 60px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+    }
+
+    .channel-header { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 0.5rem; 
+      margin-bottom: 0.5rem; 
+    }
+
+    .channel-name { 
+      font-size: 1.2rem; 
+      font-weight: 700; 
+    }
+
+    .channel-verified {
+      background: var(--accent);
+      color: var(--text);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .calendar-button {
+      background: var(--color-calendar);
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.5rem 1rem;
+      color: var(--text);
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 200px;
+      margin: 0.5rem auto;
+    }
+
+    .calendar-button:hover, .calendar-button:focus {
+      transform: translateY(-0.15rem);
+      outline: none;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+
+    .channel-status { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.5rem; 
+      justify-content: center; 
+      margin-bottom: 0.5rem; 
+    }
+
+    .channel-tag {
+      background: var(--rules-bg);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    .channel-actions { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.5rem; 
+      justify-content: center; 
+      margin-top: 0.5rem; 
+    }
+
+    .channel-button {
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s;
+      touch-action: manipulation;
+      color: var(--text);
+    }
+
+    .channel-button-discord { 
+      background: var(--color-discord); 
+    }
+
+    .channel-button-discord:hover { 
+      background: rgba(68, 81, 222, 0.9); 
+    }
+
+    .channel-button-btc { 
+      background: var(--color-bitcoin); 
+    }
+
+    .channel-button-btc:hover { 
+      background: #e0861a; 
+    }
+
+    .channel-button-eth { 
+      background: var(--color-ethereum); 
+    }
+
+    .channel-button-eth:hover { 
+      background: #2c2c2c; 
+    }
+
+    .stream-container { 
+      margin-bottom: 1rem; 
+      text-align: center;
+    }
+
+    .stream-status-button {
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: background 0.2s;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .stream-status-button.live {
+      background: #ff0000; 
+      position: relative;
+    }
+
+    .stream-status-button.live::after {
+      content: '';
+      position: absolute;
+      top: 0.3rem;
+      right: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      animation: flicker 1s infinite;
+    }
+
+    .stream-status-button.offline { 
+      background: #0040ff; 
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    .stream-timer {
+      margin-top: 0.5rem;
+      background: var(--rules-bg);
+      color: var(--text);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      display: inline-block;
+    }
+
+    .goals-container {
+      background: var(--rules-bg);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .goal-item { 
+      margin-bottom: 0.75rem; 
+    }
+
+    .goal-header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-bottom: 0.4rem; 
+    }
+
+    .goal-title { 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+    }
+
+    .goal-progress { 
+      font-size: 0.85rem; 
+      color: var(--accent); 
+    }
+
+    .goal-bar { 
+      height: 5px; 
+      background: rgba(255, 255, 255, 0.1); 
+      border-radius: 3px; 
+      overflow: hidden; 
+    }
+
+    .goal-fill { 
+      height: 100%; 
+      background: var(--accent); 
+      border-radius: 3px; 
+      transition: width 0.5s ease; 
+    }
+
+    /* Social Container */
+    .social-container {
+      background: var(--rules-bg);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .social-container h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .social-button {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.75rem;
+      color: var(--text);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+    }
+
+    .social-button:hover, .social-button:focus {
+      transform: translateY(-0.15rem);
+      outline: none;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+
+    .social-button.youtube { background: var(--color-youtube); }
+    .social-button.twitch { background: var(--color-twitch); }
+    .social-button.twitter { background: var(--color-twitter); }
+    .social-button.facebook { background: var(--color-facebook); }
+    .social-button.discord { background: var(--color-discord); }
+    .social-button.telegram { background: var(--color-telegram); }
+    .social-button.bluesky { background: var(--color-bluesky); }
+    .social-button.threads { background: var(--color-threads); }
+    .social-button.instagram { background: var(--color-instagram); }
+    .social-button.reddit { background: var(--color-reddit); }
+    .social-button.snapchat { background: var(--color-snapchat); color: #000000; }
+    .social-button.tiktok { background: var(--color-tiktok); }
+    .social-button.kick { background: var(--color-kick); color: #000000; }
+    .social-button.trovox { background: var(--color-trovox); }
+
+    .social-button img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--rules-bg);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-10px);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .main {
+        padding: 0.75rem;
+      }
+
+      .channel-avatar img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .channel-name {
+        font-size: 1.1rem;
+      }
+
+      .channel-button {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.8rem;
+      }
+
+      .stream-status-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .goals-container {
+        padding: 0.75rem;
+      }
+
+      .social-container {
+        padding: 0.75rem;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      }
+
+      .social-button {
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .dropdown {
+        width: 100%;
+      }
+
+      .dropdown__face,
+      .dropdown__items {
+        padding: 0.75rem;
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      }
+
+      .calendar-button {
+        padding: 0.4rem 0.8rem;
+        font-size: clamp(0.6rem, 2vw, 0.7rem);
+        max-width: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .channel-button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+      }
+
+      .stream-status-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="main">
+    <div class="intro">
+      <h1>ggqp.live</h1>
+      <p>New Twitch org, live from 19th May 2025 LAUNCH DAY! Streaming Tuesday, Thursday, Saturday.</p>
+    </div>
+
+    <div class="streamer-select">
+      <div class="dropdown" role="combobox" aria-expanded="false">
+        <div class="dropdown__face" tabindex="0">
+          <div class="dropdown__text" id="dropdown-text">LIVE NOW!</div>
+          <div class="dropdown__arrow"></div>
+        </div>
+        <ul class="dropdown__items" id="streamer-dropdown">
+          <li data-streamer="live-now" tabindex="0">LIVE NOW!</li>
+          <li data-streamer="trevorMarksman" tabindex="0">TrevorMarksman</li>
+          <li data-streamer="valentineCoolio" tabindex="0">ValentineCoolio</li>
+          <li data-streamer="legacyMartian" tabindex="0">LegacyMartian</li>
+          <li data-streamer="movieByMacaffe" tabindex="0">MovieByMacaffe</li>
+          <li data-streamer="bizaroPeter" tabindex="0">BizaroPeter</li>
+          <li data-streamer="wenssoy" tabindex="0">WENSSOY</li>
+          <li data-streamer="xvbrznem" tabindex="0">xvbrznem</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Streamer Template -->
+    <template id="streamer-template">
+      <div class="streamer-content" id="">
+        <div class="channel-info">
+          <div class="channel-avatar">
+            <a href=""><img src="" alt="" loading="lazy"></a>
+          </div>
+          <div class="channel-meta">
+            <div class="channel-header">
+              <h1 class="channel-name"><a href=""></a></h1>
+              <div class="channel-verified">✓ Verified</div>
+              <a href="webcal://p178-caldav.icloud.com/published/2/MjA2NjUwNjQ0NjMyMDY2NTT_5wAO6cLLt1hkhJG3gk9UEHNkXdRU1fVnPu_Xm4hx3-heuKEPB1p94I8HijNIh86N8wIy6cBORlZHRjh592E" class="calendar-button">
+                <i class="fas fa-calendar-alt"></i> Subscribe to Calendar
+              </a>
+            </div>
+            <div class="channel-status"></div>
+            <div class="channel-actions">
+              <a class="channel-button channel-button-discord" href=""><i class="fab fa-discord"></i> Join Discord</a>
+              <button class="channel-button channel-button-btc" data-copy="bc1qa0ynpvwhnjehfp06cerlvrrfdqvaeeyrekaa9d">
+                <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="Bitcoin Logo" style="width: 16px; height: 16px;">
+                Copy BTC Address
+              </button>
+              <button class="channel-button channel-button-eth" data-copy="0xF84E4324F59587dc220597429E153D2f244B2548">
+                <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="Ethereum Logo" style="width: 16px; height: 16px;">
+                Copy ETH Address
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="stream-container">
+          <a class="stream-status-button"></a>
+          <div class="stream-timer"></div>
+        </div>
+        <div class="goals-container">
+          <h3>Channel Goals</h3>
+          <div class="goal-item">
+            <div class="goal-header"><div class="goal-title"></div><div class="goal-progress"></div></div>
+            <div class="goal-bar"><div class="goal-fill"></div></div>
+          </div>
+          <div class="goal-item">
+            <div class="goal-header"><div class="goal-title"></div><div class="goal-progress"></div></div>
+            <div class="goal-bar"><div class="goal-fill"></div></div>
+          </div>
+          <div class="goal-item">
+            <div class="goal-header"><div class="goal-title"></div><div class="goal-progress"></div></div>
+            <div class="goal-bar"><div class="goal-fill"></div></div>
+          </div>
+        </div>
+        <div class="social-container">
+          <h3>my socials</h3>
+          <div class="social-grid"></div>
+        </div>
+      </div>
+    </template>
+  </main>
+
+  <script>
+    const streamers = [
+      {
+        id: 'trevorMarksman',
+        name: 'TrevorMarksman',
+        url: 'https://twitch.tv/trevorMarksman',
+        discord: 'https://tm.discord.luxury',
+        avatar: 'https://via.placeholder.com/150?text=TrevorMarksman',
+        tags: ['English', 'Psychology', 'Neuroscience'],
+        goals: [
+          { title: 'Follower Goal (875K)', progress: '96%' },
+          { title: 'Subscriber Goal (14K)', progress: '87%' },
+          { title: 'Donation Goal ($4,932)', progress: '78%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@trevorMarksman' },
+          twitch: { webUrl: 'https://twitch.tv/trevorMarksman' },
+          twitter: { webUrl: 'https://twitter.com/trevorMarksman' },
+          facebook: { webUrl: 'https://facebook.com/trevorMarksman' },
+          discord: { webUrl: 'https://tm.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/trevorMarksman' },
+          bluesky: { webUrl: 'https://bsky.app/profile/trevormarksman.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@trevorMarksman' },
+          instagram: { webUrl: 'https://instagram.com/trevorMarksman' },
+          reddit: { webUrl: 'https://reddit.com/r/trevorMarksman' },
+          snapchat: { webUrl: 'https://snapchat.com/add/trevorMarksman' },
+          tiktok: { webUrl: 'https://tiktok.com/@trevorMarksman' },
+          kick: { webUrl: 'https://kick.com/trevorMarksman' },
+          trovox: { webUrl: 'https://trovo.live/trevorMarksman' }
+        },
+        startHour: 0,
+        endHour: 3
+      },
+      {
+        id: 'valentineCoolio',
+        name: 'ValentineCoolio',
+        url: 'https://twitch.tv/valentineCoolio',
+        discord: 'https://vc.discord.luxury',
+        avatar: 'https://via.placeholder.com/150?text=ValentineCoolio',
+        tags: ['English', 'Health', 'Wellness'],
+        goals: [
+          { title: 'Follower Goal (435K)', progress: '99%' },
+          { title: 'Subscriber Goal (9K)', progress: '96%' },
+          { title: 'Marathon Fund ($2,916)', progress: '78%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@valentineCoolio' },
+          twitch: { webUrl: 'https://twitch.tv/valentineCoolio' },
+          twitter: { webUrl: 'https://twitter.com/valentineCoolio' },
+          facebook: { webUrl: 'https://facebook.com/valentineCoolio' },
+          discord: { webUrl: 'https://vc.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/valentineCoolio' },
+          bluesky: { webUrl: 'https://bsky.app/profile/valentinecoolio.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@valentineCoolio' },
+          instagram: { webUrl: 'https://instagram.com/valentineCoolio' },
+          reddit: { webUrl: 'https://reddit.com/r/valentineCoolio' },
+          snapchat: { webUrl: 'https://snapchat.com/add/valentineCoolio' },
+          tiktok: { webUrl: 'https://tiktok.com/@valentineCoolio' },
+          kick: { webUrl: 'https://kick.com/valentineCoolio' },
+          trovox: { webUrl: 'https://trovo.live/valentineCoolio' }
+        },
+        startHour: 3,
+        endHour: 6
+      },
+      {
+        id: 'legacyMartian',
+        name: 'LegacyMartian',
+        url: 'https://twitch.tv/legacyMartian',
+        discord: 'https://lm.discord.luxury',
+        avatar: 'https://i.postimg.cc/PLfcp01z/legacy-martian-logo.png',
+        tags: ['English', 'Fringe Science', 'Conspiracies'],
+        goals: [
+          { title: 'Follower Goal (395K)', progress: '96%' },
+          { title: 'Subscriber Goal (7K)', progress: '87%' },
+          { title: 'Research Fund ($5,913)', progress: '78%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@legacyMartian' },
+          twitch: { webUrl: 'https://twitch.tv/legacyMartian' },
+          twitter: { webUrl: 'https://twitter.com/legacyMartian' },
+          facebook: { webUrl: 'https://facebook.com/legacyMartian' },
+          discord: { webUrl: 'https://lm.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/legacyMartian' },
+          bluesky: { webUrl: 'https://bsky.app/profile/legacymartian.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@legacyMartian' },
+          instagram: { webUrl: 'https://instagram.com/legacyMartian' },
+          reddit: { webUrl: 'https://reddit.com/r/legacyMartian' },
+          snapchat: { webUrl: 'https://snapchat.com/add/legacyMartian' },
+          tiktok: { webUrl: 'https://tiktok.com/@legacyMartian' },
+          kick: { webUrl: 'https://kick.com/legacyMartian' },
+          trovox: { webUrl: 'https://trovo.live/legacyMartian' }
+        },
+        startHour: 6,
+        endHour: 9
+      },
+      {
+        id: 'movieByMacaffe',
+        name: 'MovieByMacaffe',
+        url: 'https://twitch.tv/movieByMacaffe',
+        discord: 'https://mbm.discord.luxury',
+        avatar: 'https://via.placeholder.com/150?text=MovieByMacaffe',
+        tags: ['English', 'Sports', 'Commentary'],
+        goals: [
+          { title: 'Follower Goal (595K)', progress: '99%' },
+          { title: 'Subscriber Goal (10K)', progress: '96%' },
+          { title: 'Event Fund ($3,924)', progress: '78%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@movieByMacaffe' },
+          twitch: { webUrl: 'https://twitch.tv/movieByMacaffe' },
+          twitter: { webUrl: 'https://twitter.com/movieByMacaffe' },
+          facebook: { webUrl: 'https://facebook.com/movieByMacaffe' },
+          discord: { webUrl: 'https://mbm.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/movieByMacaffe' },
+          bluesky: { webUrl: 'https://bsky.app/profile/moviebymacaffe.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@movieByMacaffe' },
+          instagram: { webUrl: 'https://instagram.com/movieByMacaffe' },
+          reddit: { webUrl: 'https://reddit.com/r/movieByMacaffe' },
+          snapchat: { webUrl: 'https://snapchat.com/add/movieByMacaffe' },
+          tiktok: { webUrl: 'https://tiktok.com/@movieByMacaffe' },
+          kick: { webUrl: 'https://kick.com/movieByMacaffe' },
+          trovox: { webUrl: 'https://trovo.live/movieByMacaffe' }
+        },
+        startHour: 9,
+        endHour: 12
+      },
+      {
+        id: 'bizaroPeter',
+        name: 'BizaroPeter',
+        url: 'https://twitch.tv/bizaroPeter',
+        discord: 'https://bp.discord.luxury',
+        avatar: 'https://via.placeholder.com/150?text=BizaroPeter',
+        tags: ['English', 'Productivity', 'Co-working'],
+        goals: [
+          { title: 'Follower Goal (545K)', progress: '96%' },
+          { title: 'Subscriber Goal (9K)', progress: '87%' },
+          { title: 'Equipment Fund ($3,951)', progress: '78%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@bizaroPeter' },
+          twitch: { webUrl: 'https://twitch.tv/bizaroPeter' },
+          twitter: { webUrl: 'https://twitter.com/bizaroPeter' },
+          facebook: { webUrl: 'https://facebook.com/bizaroPeter' },
+          discord: { webUrl: 'https://bp.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/bizaroPeter' },
+          bluesky: { webUrl: 'https://bsky.app/profile/bizaropeter.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@bizaroPeter' },
+          instagram: { webUrl: 'https://instagram.com/bizaroPeter' },
+          reddit: { webUrl: 'https://reddit.com/r/bizaroPeter' },
+          snapchat: { webUrl: 'https://snapchat.com/add/bizaroPeter' },
+          tiktok: { webUrl: 'https://tiktok.com/@bizaroPeter' },
+          kick: { webUrl: 'https://kick.com/bizaroPeter' },
+          trovox: { webUrl: 'https://trovo.live/bizaroPeter' }
+        },
+        startHour: 12,
+        endHour: 15
+      },
+      {
+        id: 'wenssoy',
+        name: 'WENSSOY',
+        url: 'https://twitch.tv/wenssoy',
+        discord: 'https://ws.discord.luxury',
+        avatar: 'https://via.placeholder.com/150?text=WENSSOY',
+        tags: ['English', 'News', 'Vlogs'],
+        goals: [
+          { title: 'Follower Goal (495K)', progress: '99%' },
+          { title: 'Subscriber Goal (11K)', progress: '96%' },
+          { title: 'Donation Goal ($4,914)', progress: '78%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@wenssoy' },
+          twitch: { webUrl: 'https://twitch.tv/wenssoy' },
+          twitter: { webUrl: 'https://twitter.com/wenssoy' },
+          facebook: { webUrl: 'https://facebook.com/wenssoy' },
+          discord: { webUrl: 'https://ws.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/wenssoy' },
+          bluesky: { webUrl: 'https://bsky.app/profile/wenssoy.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@wenssoy' },
+          instagram: { webUrl: 'https://instagram.com/wenssoy' },
+          reddit: { webUrl: 'https://reddit.com/r/wenssoy' },
+          snapchat: { webUrl: 'https://snapchat.com/add/wenssoy' },
+          tiktok: { webUrl: 'https://tiktok.com/@wenssoy' },
+          kick: { webUrl: 'https://kick.com/wenssoy' },
+          trovox: { webUrl: 'https://trovo.live/wenssoy' }
+        },
+        startHour: 15,
+        endHour: 18
+      },
+      {
+        id: 'xvbrznem',
+        name: 'xvbrznem',
+        url: 'https://twitch.tv/xvbrznem',
+        discord: 'https://xv.discord.luxury',
+        avatar: 'https://i.postimg.cc/HcVh35Zr/xvbrznem-logo.jpg',
+        tags: ['English', 'Sleep Science', 'ASMR'],
+        goals: [
+          { title: 'Follower Goal (655K)', progress: '98%' },
+          { title: 'Subscriber Goal (11K)', progress: '92%' },
+          { title: 'Research Fund ($4,920)', progress: '82%' }
+        ],
+        social: {
+          youtube: { webUrl: 'https://youtube.com/@xvbrznem' },
+          twitch: { webUrl: 'https://twitch.tv/xvbrznem' },
+          twitter: { webUrl: 'https://twitter.com/xvbrznem' },
+          facebook: { webUrl: 'https://facebook.com/xvbrznem' },
+          discord: { webUrl: 'https://xv.discord.luxury' },
+          telegram: { webUrl: 'https://t.me/xvbrznem' },
+          bluesky: { webUrl: 'https://bsky.app/profile/xvbrznem.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@xvbrznem' },
+          instagram: { webUrl: 'https://instagram.com/xvbrznem' },
+          reddit: { webUrl: 'https://reddit.com/r/xvbrznem' },
+          snapchat: { webUrl: 'https://snapchat.com/add/xvbrznem' },
+          tiktok: { webUrl: 'https://tiktok.com/@xvbrznem' },
+          kick: { webUrl: 'https://kick.com/xvbrznem' },
+          trovox: { webUrl: 'https://trovo.live/xvbrznem' }
+        },
+        startHour: 18,
+        endHour: 24
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownFace = document.querySelector('.dropdown__face');
+      const dropdownItems = document.querySelector('.dropdown__items');
+      const main = document.querySelector('.main');
+      const template = document.getElementById('streamer-template');
+
+      // Social media platforms with icons
+      const socialPlatforms = {
+        youtube: { icon: 'fa-brands fa-youtube', label: 'YouTube' },
+        twitch: { icon: 'fa-brands fa-twitch', label: 'Twitch' },
+        twitter: { icon: 'fa-brands fa-x-twitter', label: 'Twitter' },
+        facebook: { icon: 'fa-brands fa-facebook', label: 'Facebook' },
+        discord: { icon: 'fa-brands fa-discord', label: 'Discord' },
+        telegram: { icon: 'fa-brands fa-telegram', label: 'Telegram' },
+        bluesky: { icon: 'https://i.postimg.cc/QM5FLhnw/Bluesky-Logo-svg.png', label: 'Bluesky' },
+        threads: { icon: 'fa-brands fa-threads', label: 'Threads' },
+        instagram: { icon: 'fa-brands fa-instagram', label: 'Instagram' },
+        reddit: { icon: 'fa-brands fa-reddit', label: 'Reddit' },
+        snapchat: { icon: 'fa-brands fa-snapchat', label: 'Snapchat' },
+        tiktok: { icon: 'fa-brands fa-tiktok', label: 'TikTok' },
+        kick: { icon: 'https://i.postimg.cc/B6Kcwrxn/kick-logo.png', label: 'Kick' },
+        trovox: { icon: 'https://i.postimg.cc/7PSn1yHB/trovo-logo-1.png', label: 'Trovo' }
+      };
+
+      // Toast notification function
+      function showToast(message) {
+        let toast = document.querySelector('.toast');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.className = 'toast';
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      }
+
+      // Copy to clipboard function with fallback
+      async function copyToClipboard(text) {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            showToast(`Copied to clipboard: ${text}`);
+          } else {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showToast(`Copied to clipboard: ${text}`);
+          }
+        } catch (e) {
+          showToast('Failed to copy to clipboard. Please try again.');
+          console.error('Copy failed:', e);
+        }
+      }
+
+      function getNzTime(date) {
+        return new Date(date.toLocaleString("en-US", { timeZone: "Pacific/Auckland" }));
+      }
+
+      function isStreamingDay() {
+        const nzTime = getNzTime(new Date());
+        const day = nzTime.getDay();
+        return [2, 4, 6].includes(day); // Tuesday, Thursday, Saturday
+      }
+
+      function getCurrentStreamer() {
+        if (!isStreamingDay()) return null;
+        const nzTime = getNzTime(new Date());
+        const currentHour = nzTime.getHours();
+        return streamers.find(s => currentHour >= s.startHour && currentHour < s.endHour) || null;
+      }
+
+      function getNextStreamer(streamer) {
+        if (!isStreamingDay()) {
+          const nzTime = getNzTime(new Date());
+          let nextDay = nzTime.getDay();
+          let daysUntilNext = 1;
+          while (![2, 4, 6].includes((nextDay + daysUntilNext) % 7)) {
+            daysUntilNext++;
+          }
+          return streamers[0];
+        }
+        const nzTime = getNzTime(new Date());
+        const currentHour = nzTime.getHours();
+        if (!streamer) return streamers[0];
+        let next = streamers.find(s => s.startHour > currentHour && s.startHour > streamer.startHour);
+        return next || streamers[0];
+      }
+
+      function updateStreamerContent(content, streamer, isLive) {
+        const nzTime = getNzTime(new Date());
+        const currentHour = nzTime.getHours();
+
+        // Populate channel info
+        const avatarLink = content.querySelector('.channel-avatar a');
+        avatarLink.href = streamer.url;
+        const avatarImg = content.querySelector('.channel-avatar img');
+        avatarImg.src = streamer.avatar;
+        avatarImg.alt = streamer.name;
+
+        const nameLink = content.querySelector('.channel-name a');
+        nameLink.href = streamer.url;
+        nameLink.textContent = streamer.name;
+
+        const status = content.querySelector('.channel-status');
+        status.innerHTML = '';
+        streamer.tags.forEach(tag => {
+          const tagEl = document.createElement('div');
+          tagEl.className = 'channel-tag';
+          tagEl.textContent = tag;
+          status.appendChild(tagEl);
+        });
+
+        // Update channel actions
+        const discordButton = content.querySelector('.channel-button-discord');
+        discordButton.href = streamer.discord;
+
+        const btcButton = content.querySelector('.channel-button-btc');
+        btcButton.replaceWith(btcButton.cloneNode(true));
+        const newBtcButton = content.querySelector('.channel-button-btc');
+        newBtcButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          copyToClipboard(newBtcButton.dataset.copy);
+        });
+
+        const ethButton = content.querySelector('.channel-button-eth');
+        ethButton.replaceWith(ethButton.cloneNode(true));
+        const newEthButton = content.querySelector('.channel-button-eth');
+        newEthButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          copyToClipboard(newEthButton.dataset.copy);
+        });
+
+        // Stream status and timer
+        const statusButton = content.querySelector('.stream-status-button');
+        statusButton.textContent = isLive ? 'Join Live on Twitch!' : 'Watch VODs';
+        statusButton.className = `stream-status-button ${isLive ? 'live' : 'offline'}`;
+        statusButton.href = isLive ? streamer.url : `${streamer.url}/videos`;
+
+        let nextStreamTime = new Date(nzTime);
+        if (!isStreamingDay()) {
+          let nextDay = nzTime.getDay();
+          let daysUntilNext = 1;
+          while (![2, 4, 6].includes((nextDay + daysUntilNext) % 7)) {
+            daysUntilNext++;
+          }
+          nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
+          nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
+        } else if (currentHour < streamer.startHour) {
+          nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
+        } else {
+          let nextDay = nzTime.getDay();
+          let daysUntilNext = 1;
+          while (![2, 4, 6].includes((nextDay + daysUntilNext) % 7)) {
+            daysUntilNext++;
+          }
+          nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
+          nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
+        }
+
+        const timeDiff = nextStreamTime - nzTime;
+        const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        const countdownText = isLive ? `${streamer.name} streaming now!` :
+          timeDiff <= 0 ? `${streamer.name} should be live soon!` :
+          `Next stream in ${hours}h ${minutes}m ${seconds}s`;
+
+        content.querySelector('.stream-timer').textContent = countdownText;
+
+        // Goals
+        const goals = content.querySelectorAll('.goal-item');
+        streamer.goals.forEach((goal, i) => {
+          goals[i].querySelector('.goal-title').textContent = goal.title;
+          goals[i].querySelector('.goal-progress').textContent = goal.progress;
+          goals[i].querySelector('.goal-fill').style.width = goal.progress;
+        });
+
+        // Social media
+        const socialGrid = content.querySelector('.social-grid');
+        socialGrid.innerHTML = '';
+        Object.keys(streamer.social).forEach(platform => {
+          const { webUrl } = streamer.social[platform];
+          const { icon } = socialPlatforms[platform];
+          const socialButton = document.createElement('a');
+          socialButton.className = `social-button ${platform}`;
+          socialButton.href = webUrl;
+          socialButton.innerHTML = icon.startsWith('fa-') 
+            ? `<i class="${icon}"></i>`
+            : `<img src="${icon}" alt="${platform} icon">`;
+          socialGrid.appendChild(socialButton);
+        });
+      }
+
+      // Generate streamer content dynamically
+      streamers.forEach((streamer, index) => {
+        const clone = template.content.cloneNode(true);
+        const content = clone.querySelector('.streamer-content');
+        content.id = streamer.id;
+
+        const nzTime = getNzTime(new Date());
+        const currentHour = nzTime.getHours();
+        const isLive = isStreamingDay() && currentHour >= streamer.startHour && currentHour < streamer.endHour;
+
+        updateStreamerContent(content, streamer, isLive);
+        main.appendChild(clone);
+      });
+
+      // Generate "LIVE NOW!" tab content
+      const liveClone = template.content.cloneNode(true);
+      const liveContent = liveClone.querySelector('.streamer-content');
+      liveContent.id = 'live-now';
+      liveContent.classList.add('active');
+
+      const currentStreamer = getCurrentStreamer();
+      if (currentStreamer) {
+        updateStreamerContent(liveContent, currentStreamer, true);
+      } else {
+        const nextStreamer = getNextStreamer(null);
+        updateStreamerContent(liveContent, nextStreamer, false);
+      }
+      main.appendChild(liveClone);
+
+      // Dropdown switching
+      dropdownFace.addEventListener('click', () => {
+        const isOpen = dropdownItems.classList.contains('active');
+        dropdownItems.classList.toggle('active');
+        dropdownFace.classList.toggle('active');
+        document.querySelector('.dropdown').setAttribute('aria-expanded', !isOpen);
+      });
+
+      dropdownItems.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', () => {
+          document.querySelectorAll('.streamer-content').forEach(c => c.classList.remove('active'));
+          document.getElementById(item.dataset.streamer).classList.add('active');
+          document.getElementById('dropdown-text').textContent = item.textContent;
+          dropdownItems.classList.remove('active');
+          dropdownFace.classList.remove('active');
+          document.querySelector('.dropdown').setAttribute('aria-expanded', 'false');
+        });
+        item.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            document.querySelectorAll('.streamer-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(item.dataset.streamer).classList.add('active');
+            document.getElementById('dropdown-text').textContent = item.textContent;
+            dropdownItems.classList.remove('active');
+            dropdownFace.classList.remove('active');
+            document.querySelector('.dropdown').setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Update timers every second
+      setInterval(() => {
+        const nzTime = getNzTime(new Date());
+        const currentHour = nzTime.getHours();
+
+        streamers.forEach(streamer => {
+          const content = document.getElementById(streamer.id);
+          if (!content) return;
+
+          const isLive = isStreamingDay() && currentHour >= streamer.startHour && currentHour < streamer.endHour;
+          const statusButton = content.querySelector('.stream-status-button');
+          statusButton.textContent = isLive ? 'Join Live on Twitch!' : 'Watch VODs';
+          statusButton.className = `stream-status-button ${isLive ? 'live' : 'offline'}`;
+          statusButton.href = isLive ? streamer.url : `${streamer.url}/videos`;
+
+          let nextStreamTime = new Date(nzTime);
+          if (!isStreamingDay()) {
+            let nextDay = nzTime.getDay();
+            let daysUntilNext = 1;
+            while (![2, 4, 6].includes((nextDay + daysUntilNext) % 7)) {
+              daysUntilNext++;
+            }
+            nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
+            nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
+          } else if (currentHour < streamer.startHour) {
+            nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
+          } else {
+            let nextDay = nzTime.getDay();
+            let daysUntilNext = 1;
+            while (![2, 4, 6].includes((nextDay + daysUntilNext) % 7)) {
+              daysUntilNext++;
+            }
+            nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
+            nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
+          }
+
+          const timeDiff = nextStreamTime - nzTime;
+          const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+          const countdownText = isLive ? `${streamer.name} streaming now!` :
+            timeDiff <= 0 ? `${streamer.name} should be live soon!` :
+            `Next stream in ${hours}h ${minutes}m ${seconds}s`;
+
+          content.querySelector('.stream-timer').textContent = countdownText;
+        });
+
+        // Update "LIVE NOW!" content
+        const liveContent = document.getElementById('live-now');
+        if (liveContent) {
+          const currentStreamer = getCurrentStreamer();
+          if (currentStreamer) {
+            updateStreamerContent(liveContent, currentStreamer, true);
+          } else {
+            const nextStreamer = getNextStreamer(null);
+            updateStreamerContent(liveContent, nextStreamer, false);
+          }
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

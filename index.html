@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GGQP.org</title>
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/pVzjDw2v/GGQP-ORG-LOGO-png.pngg">
+  <title>OGVK.org</title>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/1zbgFH24/GGQP-ORG-LOGO-png-clean.png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -230,8 +230,8 @@
       font-weight: 600;
     }
 
-    .calendar-button {
-      background: var(--color-calendar);
+    .youtube-button {
+      background: var(--color-youtube);
       border: none;
       border-radius: 0.75rem;
       padding: 0.5rem 1rem;
@@ -250,7 +250,7 @@
       margin: 0.5rem auto;
     }
 
-    .calendar-button:hover, .calendar-button:focus {
+    .youtube-button:hover, .youtube-button:focus {
       transform: translateY(-0.15rem);
       outline: none;
       box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
@@ -557,7 +557,7 @@
         font-size: clamp(0.8rem, 2.5vw, 0.9rem);
       }
 
-      .calendar-button {
+      .youtube-button {
         padding: 0.4rem 0.8rem;
         font-size: clamp(0.6rem, 2vw, 0.7rem);
         max-width: 180px;
@@ -581,7 +581,7 @@
   <main class="main">
     <div class="intro">
       <h1>GGQP.org</h1>
-      <p>LIVE 24/7 @twitch</p>
+      <p>LIVE DAILY @twitch 24/7</p>
     </div>
 
     <div class="streamer-select">
@@ -605,7 +605,7 @@
           <li data-streamer="MovieByMacaffe" tabindex="0">MovieByMacaffe</li>
           <li data-streamer="BizaroPeter" tabindex="0">BizaroPeter</li>
           <li data-streamer="WENSSOY" tabindex="0">WENSSOY</li>
-          <li data-streamer="ggqpkorg" tabindex="0">ggqpkorg</li>
+          <li data-streamer="ggqporg" tabindex="0">ggqporg</li>
           <li data-streamer="xvbrznem" tabindex="0">xvbrznem</li>
         </ul>
       </div>
@@ -621,8 +621,8 @@
             <div class="channel-header">
               <h1 class="channel-name"><a href=""></a></h1>
               <div class="channel-verified">✓ Verified</div>
-              <a href="webcal://p178-caldav.icloud.com/published/2/MjA2NjUwNjQ0NjMyMDY2NTT_5wAO6cLLt1hkhJG3gk9UEHNkXdRU1fVnPu_Xm4hx3-heuKEPB1p94I8HijNIh86N8wIy6cBORlZHRjh592E" class="calendar-button">
-                <i class="fas fa-calendar-alt"></i> Subscribe to Calendar
+              <a href="" class="youtube-button">
+                <i class="fab fa-youtube"></i> YouTube
               </a>
             </div>
             <div class="channel-status"></div>
@@ -633,7 +633,7 @@
                 Copy BTC Address
               </button>
               <button class="channel-button channel-button-eth" data-copy="0xF84E4324F59587dc220597429E153D2f244B2548">
-                <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="Ethereum Logo" style="width: 16px; height: 16px;">
+                <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="Ethereum Logo" style="width: 16px; height: 16Kypx;">
                 Copy ETH Address
               </button>
             </div>
@@ -646,16 +646,12 @@
         <div class="goals-container">
           <h3>Channel Goals</h3>
           <div class="goal-item">
-            <div class="goal-header"><div class="goal-title"></div><div class="goal-progress"></div></div>
-            <div class="goal-bar"><div class="goal-fill"></div></div>
+            <div class="goal-header"><div class="goal-title">1 Stream Daily</div><div class="goal-progress">In Progress</div></div>
+            <div class="goal-bar"><div class="goal-fill" style="width: 50%;"></div></div>
           </div>
           <div class="goal-item">
-            <div class="goal-header"><div class="goal-title"></div><div class="goal-progress"></div></div>
-            <div class="goal-bar"><div class="goal-fill"></div></div>
-          </div>
-          <div class="goal-item">
-            <div class="goal-header"><div class="goal-title"></div><div class="goal-progress"></div></div>
-            <div class="goal-bar"><div class="goal-fill"></div></div>
+            <div class="goal-header"><div class="goal-title">Complete Org Contract & Get 1K Subs</div><div class="goal-progress">0 / 1000</div></div>
+            <div class="goal-bar"><div class="goal-fill" style="width: 0%;"></div></div>
           </div>
         </div>
         <div class="social-container">
@@ -675,11 +671,7 @@
         discord: 'https://x.discord.luxury',
         avatar: 'https://i.postimg.cc/F1k6Lykq/xwlasxd-logo.png',
         tags: ['English', 'Computer Science', 'Machine Learning'],
-        goals: [
-          { title: 'Follower Goal (918K)', progress: '96%' },
-          { title: 'Subscriber Goal (15K)', progress: '87%' },
-          { title: 'Donation Goal ($5,913)', progress: '78%' }
-        ],
+        youtube: 'https://youtube.com/@xwlasxd',
         social: {
           youtube: { webUrl: 'https://youtube.com/@xwlasxd' },
           twitch: { webUrl: 'https://twitch.tv/xwlasxd' },
@@ -698,7 +690,7 @@
         },
         startHour: 0,
         endHour: 3,
-        streamingDays: [1, 3, 5, 0] // Monday, Wednesday, Friday, Sunday
+        streamingDays: [1, 3, 5, 0]
       },
       {
         id: 'HeavySamLifts',
@@ -707,11 +699,7 @@
         discord: 'https://hsl.discord.luxury',
         avatar: 'https://i.postimg.cc/MMNrLTNd/HSL-logo.png',
         tags: ['English', 'Fitness', 'Strength Training'],
-        goals: [
-          { title: 'Follower Goal (585K)', progress: '99%' },
-          { title: 'Subscriber Goal (12K)', progress: '96%' },
-          { title: 'Donation Goal ($2,907)', progress: '88%' }
-        ],
+        youtube: 'https://youtube.com/@HeavySamLifts',
         social: {
           youtube: { webUrl: 'https://youtube.com/@HeavySamLifts' },
           twitch: { webUrl: 'https://twitch.tv/HeavySamLifts' },
@@ -739,11 +727,7 @@
         discord: 'https://spl.discord.luxury',
         avatar: 'https://i.postimg.cc/2V4XHCw7/shady-peter-live-profile-3k.png',
         tags: ['English', 'Chess', 'Puzzle Solving'],
-        goals: [
-          { title: 'Follower Goal (615K)', progress: '96%' },
-          { title: 'Subscriber Goal (10K)', progress: '87%' },
-          { title: 'Donation Goal ($1,908)', progress: '78%' }
-        ],
+        youtube: 'https://youtube.com/@ShadyPeterLive',
         social: {
           youtube: { webUrl: 'https://youtube.com/@ShadyPeterLive' },
           twitch: { webUrl: 'https://twitch.tv/ShadyPeterLive' },
@@ -771,11 +755,7 @@
         discord: 'https://rkg.discord.luxury',
         avatar: 'https://i.postimg.cc/3kTz7kRq/rkg-logo.png',
         tags: ['English', 'Productivity', 'Study Streams'],
-        goals: [
-          { title: 'Follower Goal (750K)', progress: '99%' },
-          { title: 'Subscriber Goal (8K)', progress: '96%' },
-          { title: 'New Equipment Fund ($3,906)', progress: '88%' }
-        ],
+        youtube: 'https://youtube.com/@ramkrishanghoil',
         social: {
           youtube: { webUrl: 'https://youtube.com/@ramkrishanghoil' },
           twitch: { webUrl: 'https://twitch.tv/ramkrishanghoil' },
@@ -803,11 +783,7 @@
         discord: 'https://z.discord.luxury',
         avatar: 'https://i.postimg.cc/0QqJjT1F/zxckjsdv-profile.png',
         tags: ['English', 'Fashion', 'Tech Gear'],
-        goals: [
-          { title: 'Follower Goal (830K)', progress: '96%' },
-          { title: 'Subscriber Goal (13K)', progress: '87%' },
-          { title: 'Event Fund ($5,904)', progress: '78%' }
-        ],
+        youtube: 'https://youtube.com/@zxckjsdv',
         social: {
           youtube: { webUrl: 'https://youtube.com/@zxckjsdv' },
           twitch: { webUrl: 'https://twitch.tv/zxckjsdv' },
@@ -835,11 +811,7 @@
         discord: 'https://brb.discord.luxury',
         avatar: 'https://i.postimg.cc/LXhwKQ7N/brbcompiling-profile.png',
         tags: ['English', 'Programming', 'Tech News'],
-        goals: [
-          { title: 'Follower Goal (700K)', progress: '99%' },
-          { title: 'Subscriber Goal (12K)', progress: '96%' },
-          { title: 'Hackathon Fund ($4,905)', progress: '88%' }
-        ],
+        youtube: 'https://youtube.com/@brbcompiling',
         social: {
           youtube: { webUrl: 'https://youtube.com/@brbcompiling' },
           twitch: { webUrl: 'https://twitch.tv/brbcompiling' },
@@ -867,11 +839,7 @@
         discord: 'https://ogvk.discord.luxury',
         avatar: 'https://i.postimg.cc/4yDQ7YnD/NEW-OGVK-LOGO.png',
         tags: ['English', 'Variety', 'Community'],
-        goals: [
-          { title: 'Follower Goal (1M)', progress: '95%' },
-          { title: 'Subscriber Goal (20K)', progress: '90%' },
-          { title: 'Community Fund ($10,000)', progress: '85%' }
-        ],
+        youtube: 'https://youtube.com/@ogvkorg',
         social: {
           youtube: { webUrl: 'https://youtube.com/@ogvkorg' },
           twitch: { webUrl: 'https://twitch.tv/ogvkorg' },
@@ -899,11 +867,7 @@
         discord: 'https://tm.discord.luxury',
         avatar: 'https://i.postimg.cc/ZRpYD5yd/random-easy-logo.png',
         tags: ['English', 'Gaming', 'Shooting Games'],
-        goals: [
-          { title: 'Follower Goal (800K)', progress: '97%' },
-          { title: 'Subscriber Goal (14K)', progress: '89%' },
-          { title: 'Donation Goal ($6,000)', progress: '80%' }
-        ],
+        youtube: 'https://youtube.com/@TrevorMarksman',
         social: {
           youtube: { webUrl: 'https://youtube.com/@TrevorMarksman' },
           twitch: { webUrl: 'https://twitch.tv/TrevorMarksman' },
@@ -922,7 +886,7 @@
         },
         startHour: 0,
         endHour: 3,
-        streamingDays: [2, 4, 6] // Tuesday, Thursday, Saturday
+        streamingDays: [2, 4, 6]
       },
       {
         id: 'ValentineCoolio',
@@ -931,11 +895,7 @@
         discord: 'https://vc.discord.luxury',
         avatar: 'https://i.postimg.cc/P57tXwWD/coolio-kick.png',
         tags: ['English', 'Music', 'Chill Vibes'],
-        goals: [
-          { title: 'Follower Goal (600K)', progress: '98%' },
-          { title: 'Subscriber Goal (10K)', progress: '92%' },
-          { title: 'Donation Goal ($3,000)', progress: '85%' }
-        ],
+        youtube: 'https://youtube.com/@ValentineCoolio',
         social: {
           youtube: { webUrl: 'https://youtube.com/@ValentineCoolio' },
           twitch: { webUrl: 'https://twitch.tv/ValentineCoolio' },
@@ -963,11 +923,7 @@
         discord: 'https://lm.discord.luxury',
         avatar: 'https://i.postimg.cc/PLfcp01z/legacy-martian-logo.png',
         tags: ['English', 'Sci-Fi', 'Gaming'],
-        goals: [
-          { title: 'Follower Goal (700K)', progress: '96%' },
-          { title: 'Subscriber Goal (12K)', progress: '88%' },
-          { title: 'Donation Goal ($4,500)', progress: '79%' }
-        ],
+        youtube: 'https://youtube.com/@LegacyMartian',
         social: {
           youtube: { webUrl: 'https://youtube.com/@LegacyMartian' },
           twitch: { webUrl: 'https://twitch.tv/LegacyMartian' },
@@ -995,11 +951,7 @@
         discord: 'https://mbm.discord.luxury',
         avatar: 'https://i.postimg.cc/hjLg1ZH8/macaffe-best-logo.png',
         tags: ['English', 'Movies', 'Reviews'],
-        goals: [
-          { title: 'Follower Goal (650K)', progress: '99%' },
-          { title: 'Subscriber Goal (9K)', progress: '95%' },
-          { title: 'Equipment Fund ($5,000)', progress: '87%' }
-        ],
+        youtube: 'https://youtube.com/@MovieByMacaffe',
         social: {
           youtube: { webUrl: 'https://youtube.com/@MovieByMacaffe' },
           twitch: { webUrl: 'https://twitch.tv/MovieByMacaffe' },
@@ -1027,11 +979,7 @@
         discord: 'https://bp.discord.luxury',
         avatar: 'https://i.postimg.cc/9XsKQYKC/bizaropeter-profile.png',
         tags: ['English', 'Comedy', 'Gaming'],
-        goals: [
-          { title: 'Follower Goal (720K)', progress: '96%' },
-          { title: 'Subscriber Goal (11K)', progress: '90%' },
-          { title: 'Event Fund ($4,800)', progress: '82%' }
-        ],
+        youtube: 'https://youtube.com/@BizaroPeter',
         social: {
           youtube: { webUrl: 'https://youtube.com/@BizaroPeter' },
           twitch: { webUrl: 'https://twitch.tv/BizaroPeter' },
@@ -1059,11 +1007,7 @@
         discord: 'https://ws.discord.luxury',
         avatar: 'https://i.postimg.cc/k5jh3QWr/wens-logo.png',
         tags: ['English', 'Art', 'Creative Streams'],
-        goals: [
-          { title: 'Follower Goal (680K)', progress: '98%' },
-          { title: 'Subscriber Goal (10K)', progress: '93%' },
-          { title: 'Art Fund ($4,200)', progress: '86%' }
-        ],
+        youtube: 'https://youtube.com/@WENSSOY',
         social: {
           youtube: { webUrl: 'https://youtube.com/@WENSSOY' },
           twitch: { webUrl: 'https://twitch.tv/WENSSOY' },
@@ -1085,32 +1029,28 @@
         streamingDays: [2, 4, 6]
       },
       {
-        id: 'ggqpkorg',
-        name: 'ggqpkorg',
-        url: 'https://twitch.tv/ggqpkorg',
+        id: 'ggqporg',
+        name: 'ggqporg',
+        url: 'https://twitch.tv/ggqporg',
         discord: 'https://ggqp.discord.luxury',
         avatar: 'https://i.postimg.cc/4yDQ7YnD/NEW-OGVK-LOGO.png',
         tags: ['English', 'Variety', 'Community'],
-        goals: [
-          { title: 'Follower Goal (1.2M)', progress: '94%' },
-          { title: 'Subscriber Goal (22K)', progress: '91%' },
-          { title: 'Community Fund ($12,000)', progress: '88%' }
-        ],
+        youtube: 'https://youtube.com/@ggqporg',
         social: {
-          youtube: { webUrl: 'https://youtube.com/@ggqpkorg' },
-          twitch: { webUrl: 'https://twitch.tv/ggqpkorg' },
-          twitter: { webUrl: 'https://twitter.com/ggqpkorg' },
-          facebook: { webUrl: 'https://facebook.com/ggqpkorg' },
+          youtube: { webUrl: 'https://youtube.com/@ggqporg' },
+          twitch: { webUrl: 'https://twitch.tv/ggqporg' },
+          twitter: { webUrl: 'https://twitter.com/ggqporg' },
+          facebook: { webUrl: 'https://facebook.com/ggqporg' },
           discord: { webUrl: 'https://ggqp.discord.luxury' },
-          telegram: { webUrl: 'https://t.me/ggqpkorg' },
-          bluesky: { webUrl: 'https://bsky.app/profile/ggqpkorg.bsky.social' },
-          threads: { webUrl: 'https://threads.net/@ggqpkorg' },
-          instagram: { webUrl: 'https://instagram.com/ggqpkorg' },
-          reddit: { webUrl: 'https://reddit.com/r/ggqpkorg' },
-          snapchat: { webUrl: 'https://snapchat.com/add/ggqpkorg' },
-          tiktok: { webUrl: 'https://tiktok.com/@ggqpkorg' },
-          kick: { webUrl: 'https://kick.com/ggqpkorg' },
-          trovo: { webUrl: 'https://trovo.live/ggqpkorg' }
+          telegram: { webUrl: 'https://t.me/ggqporg' },
+          bluesky: { webUrl: 'https://bsky.app/profile/ggqporg.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@ggqporg' },
+          instagram: { webUrl: 'https://instagram.com/ggqporg' },
+          reddit: { webUrl: 'https://reddit.com/r/ggqporg' },
+          snapchat: { webUrl: 'https://snapchat.com/add/ggqporg' },
+          tiktok: { webUrl: 'https://tiktok.com/@ggqporg' },
+          kick: { webUrl: 'https://kick.com/ggqporg' },
+          trovo: { webUrl: 'https://trovo.live/ggqporg' }
         },
         startHour: 17,
         endHour: 18,
@@ -1123,11 +1063,7 @@
         discord: 'https://xv.discord.luxury',
         avatar: 'https://i.postimg.cc/HcVh35Zr/xvbrznem-logo.jpg',
         tags: ['English', 'Sleep Science', 'ASMR'],
-        goals: [
-          { title: 'Follower Goal (655K)', progress: '98%' },
-          { title: 'Subscriber Goal (11K)', progress: '92%' },
-          { title: 'Research Fund ($4,920)', progress: '82%' }
-        ],
+        youtube: 'https://youtube.com/@xvbrznem',
         social: {
           youtube: { webUrl: 'https://youtube.com/@xvbrznem' },
           twitch: { webUrl: 'https://twitch.tv/xvbrznem' },
@@ -1146,7 +1082,7 @@
         },
         startHour: 18,
         endHour: 24,
-        streamingDays: [1, 2, 3, 4, 5, 6, 0] // All days
+        streamingDays: [1, 2, 3, 4, 5, 6, 0]
       }
     ];
 
@@ -1182,28 +1118,13 @@
         }
         toast.textContent = message;
         toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 3000);
+        setTimeout(() => toast.classList.remove('show'), 3000);
       }
 
       async function copyToClipboard(text) {
         try {
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(text);
-            showToast(`Copied to clipboard: ${text}`);
-          } else {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed';
-            textArea.style.opacity = '0';
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            showToast(`Copied to clipboard: ${text}`);
-          }
+          await navigator.clipboard.writeText(text);
+          showToast(`Copied to clipboard: ${text}`);
         } catch (e) {
           showToast('Failed to copy to clipboard. Please try again.');
           console.error('Copy failed:', e);
@@ -1216,8 +1137,7 @@
 
       function isStreamingDay(streamer) {
         const nzTime = getNzTime(new Date());
-        const day = nzTime.getDay();
-        return streamer.streamingDays.includes(day);
+        return streamer.streamingDays.includes(nzTime.getDay());
       }
 
       function getCurrentStreamer() {
@@ -1230,20 +1150,13 @@
         const nzTime = getNzTime(new Date());
         const currentHour = nzTime.getHours();
         const currentDay = nzTime.getDay();
-
-        if (!streamer) return streamers[0];
-
         let nextStreamer = streamers.find(s => 
-          s.streamingDays.some(day => s.streamingDays.includes(day)) && 
-          s.startHour > currentHour && 
-          s.startHour > streamer.startHour
+          isStreamingDay(s) && s.startHour > currentHour && s.startHour > (streamer?.startHour || -1)
         );
-
         if (!nextStreamer) {
-          const nextDayIndex = (currentDay + 1) % 7;
-          nextStreamer = streamers.find(s => s.streamingDays.includes(nextDayIndex)) || streamers[0];
+          const nextDay = (currentDay + 1) % 7;
+          nextStreamer = streamers.find(s => s.streamingDays.includes(nextDay)) || streamers[0];
         }
-
         return nextStreamer;
       }
 
@@ -1251,8 +1164,7 @@
         const nzTime = getNzTime(new Date());
         const currentHour = nzTime.getHours();
 
-        const avatarLink = content.querySelector('.channel-avatar a');
-        avatarLink.href = streamer.url;
+        content.querySelector('.channel-avatar a').href = streamer.url;
         const avatarImg = content.querySelector('.channel-avatar img');
         avatarImg.src = streamer.avatar;
         avatarImg.alt = streamer.name;
@@ -1260,6 +1172,9 @@
         const nameLink = content.querySelector('.channel-name a');
         nameLink.href = streamer.url;
         nameLink.textContent = streamer.name;
+
+        const youtubeButton = content.querySelector('.youtube-button');
+        youtubeButton.href = streamer.youtube;
 
         const status = content.querySelector('.channel-status');
         status.innerHTML = '';
@@ -1274,20 +1189,16 @@
         discordButton.href = streamer.discord;
 
         const btcButton = content.querySelector('.channel-button-btc');
-        btcButton.replaceWith(btcButton.cloneNode(true));
-        const newBtcButton = content.querySelector('.channel-button-btc');
-        newBtcButton.addEventListener('click', (e) => {
+        btcButton.onclick = (e) => {
           e.preventDefault();
-          copyToClipboard(newBtcButton.dataset.copy);
-        });
+          copyToClipboard(btcButton.dataset.copy);
+        };
 
         const ethButton = content.querySelector('.channel-button-eth');
-        ethButton.replaceWith(ethButton.cloneNode(true));
-        const newEthButton = content.querySelector('.channel-button-eth');
-        newEthButton.addEventListener('click', (e) => {
+        ethButton.onclick = (e) => {
           e.preventDefault();
-          copyToClipboard(newEthButton.dataset.copy);
-        });
+          copyToClipboard(ethButton.dataset.copy);
+        };
 
         const statusButton = content.querySelector('.stream-status-button');
         statusButton.textContent = isLive ? 'Join Live on Twitch!' : 'Watch VODs';
@@ -1298,9 +1209,7 @@
         if (!isStreamingDay(streamer)) {
           let nextDay = nzTime.getDay();
           let daysUntilNext = 1;
-          while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) {
-            daysUntilNext++;
-          }
+          while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) daysUntilNext++;
           nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
           nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
         } else if (currentHour < streamer.startHour) {
@@ -1308,9 +1217,7 @@
         } else {
           let nextDay = nzTime.getDay();
           let daysUntilNext = 1;
-          while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) {
-            daysUntilNext++;
-          }
+          while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) daysUntilNext++;
           nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
           nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
         }
@@ -1319,19 +1226,10 @@
         const hours = Math.floor(timeDiff / (1000 * 60 * 60));
         const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
         const countdownText = isLive ? `${streamer.name} streaming now!` :
           timeDiff <= 0 ? `${streamer.name} should be live soon!` :
           `Next stream in ${hours}h ${minutes}m ${seconds}s`;
-
         content.querySelector('.stream-timer').textContent = countdownText;
-
-        const goals = content.querySelectorAll('.goal-item');
-        streamer.goals.forEach((goal, i) => {
-          goals[i].querySelector('.goal-title').textContent = goal.title;
-          goals[i].querySelector('.goal-progress').textContent = goal.progress;
-          goals[i].querySelector('.goal-fill').style.width = goal.progress;
-        });
 
         const socialGrid = content.querySelector('.social-grid');
         socialGrid.innerHTML = '';
@@ -1348,15 +1246,11 @@
         });
       }
 
-      streamers.forEach((streamer, index) => {
+      streamers.forEach(streamer => {
         const clone = template.content.cloneNode(true);
         const content = clone.querySelector('.streamer-content');
         content.id = streamer.id;
-
-        const nzTime = getNzTime(new Date());
-        const currentHour = nzTime.getHours();
-        const isLive = isStreamingDay(streamer) && currentHour >= streamer.startHour && currentHour < streamer.endHour;
-
+        const isLive = isStreamingDay(streamer) && getNzTime(new Date()).getHours() >= streamer.startHour && getNzTime(new Date()).getHours() < streamer.endHour;
         updateStreamerContent(content, streamer, isLive);
         main.appendChild(clone);
       });
@@ -1365,7 +1259,6 @@
       const liveContent = liveClone.querySelector('.streamer-content');
       liveContent.id = 'live-now';
       liveContent.classList.add('active');
-
       const currentStreamer = getCurrentStreamer();
       if (currentStreamer) {
         updateStreamerContent(liveContent, currentStreamer, true);
@@ -1422,9 +1315,7 @@
           if (!isStreamingDay(streamer)) {
             let nextDay = nzTime.getDay();
             let daysUntilNext = 1;
-            while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) {
-              daysUntilNext++;
-            }
+            while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) daysUntilNext++;
             nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
             nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
           } else if (currentHour < streamer.startHour) {
@@ -1432,9 +1323,7 @@
           } else {
             let nextDay = nzTime.getDay();
             let daysUntilNext = 1;
-            while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) {
-              daysUntilNext++;
-            }
+            while (!streamer.streamingDays.includes((nextDay + daysUntilNext) % 7)) daysUntilNext++;
             nextStreamTime.setDate(nzTime.getDate() + daysUntilNext);
             nextStreamTime.setHours(streamer.startHour, 0, 0, 0);
           }
@@ -1443,11 +1332,9 @@
           const hours = Math.floor(timeDiff / (1000 * 60 * 60));
           const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
           const countdownText = isLive ? `${streamer.name} streaming now!` :
             timeDiff <= 0 ? `${streamer.name} should be live soon!` :
             `Next stream in ${hours}h ${minutes}m ${seconds}s`;
-
           content.querySelector('.stream-timer').textContent = countdownText;
         });
 

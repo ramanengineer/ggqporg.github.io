@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,20 +125,40 @@
     .dropdown__items {
       position: absolute;
       left: 0;
-      top: calc(100% + 0.75rem);
+      top: calc(100% + 0.5rem);
       width: 100%;
       list-style: none;
       display: none;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.3rem;
       z-index: 150;
       box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(15px);
-      padding: 0.75rem;
-      border-radius: 0.75rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
       animation: slideDown 0.3s ease-in-out;
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+
+    .dropdown__items::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .dropdown__items::-webkit-scrollbar-track {
+      background: var(--primary-bg);
+      border-radius: 4px;
+    }
+
+    .dropdown__items::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .dropdown__items::-webkit-scrollbar-thumb:hover {
+      background: #cc0062;
     }
 
     .dropdown__items.active {
@@ -152,11 +171,11 @@
     }
 
     .dropdown__items li {
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 0.75rem;
       cursor: pointer;
       transition: all 0.3s ease;
       border-radius: 0.5rem;
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
       font-weight: 500;
     }
 
@@ -552,10 +571,14 @@
         width: 100%;
       }
 
-      .dropdown__face,
-      .dropdown__items {
+      .dropdown__face {
         padding: 0.75rem;
         font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      }
+
+      .dropdown__items {
+        padding: 0.5rem;
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
       }
 
       .youtube-button {
@@ -605,7 +628,7 @@
           <li data-streamer="LegacyMartian" tabindex="0">LegacyMartian</li>
           <li data-streamer="MovieByMacaffe" tabindex="0">MovieByMacaffe</li>
           <li data-streamer="BizaroPeter" tabindex="0">BizaroPeter</li>
-          <li data-streamer="GynaWENS" tabindex="0">GynaWENS</li>
+          <li data-streamer="WENSSOY" tabindex="0">WENSSOY</li>
           <li data-streamer="ggqporg" tabindex="0">ggqporg</li>
           <li data-streamer="xvbrznem" tabindex="0">xvbrznem</li>
         </ul>
@@ -634,7 +657,7 @@
                 Copy BTC Address
               </button>
               <button class="channel-button channel-button-eth" data-copy="0xF84E4324F59587dc220597429E153D2f244B2548">
-                <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="Ethereum Logo" style="width: 16px; height: 16Kypx;">
+                <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="Ethereum Logo" style="width: 16px; height: 16px;">
                 Copy ETH Address
               </button>
             </div>
@@ -810,7 +833,7 @@
         name: 'brbcompiling',
         url: 'https://twitch.tv/brbcompiling',
         discord: 'https://brb.discord.luxury',
-        avatar: 'https://i.postimg.cc/LXhwKQ7N/brbcompiling-profile.png',
+        avatar: 'https://i.postimg.cc/DzdMLGNS/brbcompiling-logo.png',
         tags: ['daily live', 'college', 'random'],
         youtube: 'https://youtube.com/@brbcompiling',
         social: {
@@ -838,7 +861,7 @@
         name: 'ogvkorg',
         url: 'https://twitch.tv/ogvkorg',
         discord: 'https://ogvk.discord.luxury',
-        avatar: 'https://i.postimg.cc/4yDQ7YnD/NEW-OGVK-LOGO.png',
+        avatar: 'https://i.ibb.co/5xS8ZqN/ogvkorg-avatar.jpg',
         tags: ['English', 'Variety', 'Community'],
         youtube: 'https://youtube.com/@ogvkorg',
         social: {
@@ -1002,28 +1025,28 @@
         streamingDays: [2, 4, 6]
       },
       {
-        id: 'GynaWENS',
-        name: 'GynaWENS',
-        url: 'https://twitch.tv/GynaWENS',
+        id: 'WENSSOY',
+        name: 'WENSSOY',
+        url: 'https://twitch.tv/WENSSOY',
         discord: 'https://ws.discord.luxury',
         avatar: 'https://i.postimg.cc/k5jh3QWr/wens-logo.png',
         tags: ['daily live', 'college', 'random'],
-        youtube: 'https://youtube.com/@GynaWENS',
+        youtube: 'https://youtube.com/@WENSSOY',
         social: {
-          youtube: { webUrl: 'https://youtube.com/@GynaWENS' },
-          twitch: { webUrl: 'https://twitch.tv/GynaWENS' },
-          twitter: { webUrl: 'https://twitter.com/GynaWENS' },
-          facebook: { webUrl: 'https://facebook.com/GynaWENS' },
+          youtube: { webUrl: 'https://youtube.com/@WENSSOY' },
+          twitch: { webUrl: 'https://twitch.tv/WENSSOY' },
+          twitter: { webUrl: 'https://twitter.com/WENSSOY' },
+          facebook: { webUrl: 'https://facebook.com/WENSSOY' },
           discord: { webUrl: 'https://ws.discord.luxury' },
-          telegram: { webUrl: 'https://t.me/GynaWENS' },
-          bluesky: { webUrl: 'https://bsky.app/profile/GynaWENS.bsky.social' },
-          threads: { webUrl: 'https://threads.net/@GynaWENS' },
-          instagram: { webUrl: 'https://instagram.com/GynaWENS' },
-          reddit: { webUrl: 'https://reddit.com/r/GynaWENS' },
-          snapchat: { webUrl: 'https://snapchat.com/add/GynaWENS' },
-          tiktok: { webUrl: 'https://tiktok.com/@GynaWENS' },
-          kick: { webUrl: 'https://kick.com/GynaWENS' },
-          trovo: { webUrl: 'https://trovo.live/GynaWENS' }
+          telegram: { webUrl: 'https://t.me/WENSSOY' },
+          bluesky: { webUrl: 'https://bsky.app/profile/WENSSOY.bsky.social' },
+          threads: { webUrl: 'https://threads.net/@WENSSOY' },
+          instagram: { webUrl: 'https://instagram.com/WENSSOY' },
+          reddit: { webUrl: 'https://reddit.com/r/WENSSOY' },
+          snapchat: { webUrl: 'https://snapchat.com/add/WENSSOY' },
+          tiktok: { webUrl: 'https://tiktok.com/@WENSSOY' },
+          kick: { webUrl: 'https://kick.com/WENSSOY' },
+          trovo: { webUrl: 'https://trovo.live/WENSSOY' }
         },
         startHour: 15,
         endHour: 17,
@@ -1034,7 +1057,7 @@
         name: 'ggqporg',
         url: 'https://twitch.tv/ggqporg',
         discord: 'https://ggqp.discord.luxury',
-        avatar: 'https://i.postimg.cc/4yDQ7YnD/NEW-OGVK-LOGO.png',
+        avatar: 'https://i.ibb.co/5xS8ZqN/ogvkorg-avatar.jpg',
         tags: ['English', 'Variety', 'Community'],
         youtube: 'https://youtube.com/@ggqporg',
         social: {

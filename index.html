@@ -3,10 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GGQP.org</title>
+  <title>GGQP.org - Live Twitch Streaming, Random & Community Hub</title>
+  <meta name="description" content="Join GGQP.org for 24/7 live Twitch streams, random content, and community engagement. Follow streamers like xwlasxd, HeavySamLifts, and more. Support via BTC, ETH, and socials!">
+  <meta name="keywords" content="GGQP, live streaming, Twitch, random, community, xwlasxd, HeavySamLifts, ShadyPeterLive, ramkrishanghoil, zxckjsdv, brbcompiling, ogvkorg, TrevorMarksman, ValentineCoolio, LegacyMartian, MovieByMacaffe, BizaroPeter, WENSSOY, ggqporg, xvbrznem, Discord, YouTube, cryptocurrency, BTC, ETH">
+  <meta name="author" content="GGQP.org">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:title" content="GGQP.org - Live Twitch Streaming, random & Community Hub">
+  <meta property="og:description" content="Explore GGQP.org for daily live Twitch streams, random content, and community interaction. Connect with streamers, join Discord, and support via BTC & ETH!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ggqp.org">
+  <meta property="og:image" content="https://i.postimg.cc/1zbgFH24/GGQP_ORG_LOGO_png_clean.png">
+  <meta property="og:site_name" content="GGQP.org">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GGQP.org - Live Twitch Streaming, random & Community Hub">
+  <meta name="twitter:description" content="Daily live Twitch streams at GGQP.org! Join xwlasxd, HeavySamLifts, and more for random and community fun. Support via BTC, ETH, and follow on socials.">
+  <meta name="twitter:image" content="https://i.postimg.cc/1zbgFH24/GGQP_ORG_LOGO_png_clean.png">
+  <link rel="canonical" href="https://ggqp.org">
   <link rel="icon" type="image/png" href="https://i.postimg.cc/1zbgFH24/GGQP_ORG_LOGO_png_clean.png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GGQP.org",
+      "url": "https://ggqp.org",
+      "description": "GGQP.org is your hub for 24/7 live Twitch streaming, random content, and community engagement. Connect with streamers, join Discord, and support via BTC & ETH.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ggqp.org/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GGQP.org",
+      "url": "https://ggqp.org",
+      "logo": "https://i.postimg.cc/1zbgFH24/GGQP_ORG_LOGO_png_clean.png",
+      "sameAs": [
+        "https://twitch.tv/ggqporg",
+        "https://youtube.com/@ggqporg",
+        "https://twitter.com/ggqporg",
+        "https://facebook.com/ggqporg",
+        "https://instagram.com/ggqporg",
+        "https://tiktok.com/@ggqporg",
+        "https://discord.gg/ggqporg"
+      ]
+    }
+  </script>
   <style>
     :root {
       --primary-bg: #3a2a24;
@@ -399,7 +447,7 @@
       margin-top: 1rem;
       width: 100%;
       max-width: 600px;
-      text-align: center;
+ Noon, text-align: center;
     }
 
     .goal-item { 
@@ -604,8 +652,8 @@
 <body>
   <main class="main">
     <div class="intro">
-      <h1>GGQP.org</h1>
-      <p>LIVE DAILY @twitch 24/7</p>
+      <h1>GGQP.org - Live Twitch Streaming & random Community</h1>
+      <p>Watch live daily Twitch streams 24/7! Join our community of gamers and streamers like xwlasxd, HeavySamLifts, ShadyPeterLive, and more.</p>
     </div>
 
     <div class="streamer-select">
@@ -639,11 +687,11 @@
       <div class="streamer-content" id="">
         <div class="channel-info">
           <div class="channel-avatar">
-            <a href=""><img src="" alt="" loading="lazy"></a>
+            <a href=""><img src="" alt="Streamer avatar" loading="lazy"></a>
           </div>
           <div class="channel-meta">
             <div class="channel-header">
-              <h1 class="channel-name"><a href=""></a></h1>
+              <h2 class="channel-name"><a href=""></a></h2>
               <div class="channel-verified">✓ Verified</div>
               <a href="" class="youtube-button">
                 <i class="fab fa-youtube"></i> YouTube
@@ -679,7 +727,7 @@
           </div>
         </div>
         <div class="social-container">
-          <h3>my socials</h3>
+          <h3>Follow on Socials</h3>
           <div class="social-grid"></div>
         </div>
       </div>
@@ -1191,7 +1239,7 @@
         content.querySelector('.channel-avatar a').href = streamer.url;
         const avatarImg = content.querySelector('.channel-avatar img');
         avatarImg.src = streamer.avatar;
-        avatarImg.alt = streamer.name;
+        avatarImg.alt = `${streamer.name} Twitch streamer avatar`;
 
         const nameLink = content.querySelector('.channel-name a');
         nameLink.href = streamer.url;
@@ -1263,6 +1311,7 @@
           const socialButton = document.createElement('a');
           socialButton.className = `social-button ${platform}`;
           socialButton.href = webUrl;
+          socialButton.setAttribute('aria-label', `Follow ${streamer.name} on ${platform}`);
           socialButton.innerHTML = icon.startsWith('fa-') 
             ? `<i class="${icon}"></i>`
             : `<img src="${icon}" alt="${platform} icon">`;

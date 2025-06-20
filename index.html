@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GGQP.org</title>
   <meta name="description" content="Join GGQP.org for 24/7 live Twitch streams, random content, and community engagement. Follow streamers like xwlasxd, HeavySamLifts, and more. Support via BTC, ETH, and socials!">
-  <meta name="keywords" content="GGQP, live streaming, Twitch, random, community, xwlasxd, HeavySamLifts, ShadyPeterLive, ramkrishanghoil, zxckjsdv, brbcompiling, ogvkorg, TrevorMarksman, ValentineCoolio, LegacyMartian, MovieByMacaffe, BizaroPeter, GynaWENS, ggqporg, xvbrznem, Discord, YouTube, cryptocurrency, BTC, ETH">
+  <meta name="keywords" content="GGQP, live streaming, Twitch, random, community, xwlasxd, HeavySamLifts, ShadyPeterLive, ramkrishanghoil, zxckjsdv, brbcompiling, TrevorMarksman, ValentineCoolio, LegacyMartian, MovieByMacaffe, BizaroPeter, GynaWENS, xvbrznem, Discord, YouTube, cryptocurrency, BTC, ETH">
   <meta name="author" content="GGQP.org">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -51,7 +51,7 @@
         "https://facebook.com/ggqporg",
         "https://instagram.com/ggqporg",
         "https://tiktok.com/@ggqporg",
-        "https://discord.gg/ggqporg"
+        "https://discord.gg/ymwPhfz2"
       ]
     }
   </script>
@@ -81,6 +81,8 @@
       --color-bitcoin: #F7931A;
       --color-ethereum: #3C3C3D;
       --color-calendar: rgb(255, 0, 136);
+      --color-allmysocials: rgb(239, 63, 63);
+      --color-streamschedule: rgb(119, 77, 238);
     }
 
     [data-contrast="high"] {
@@ -447,7 +449,7 @@
       margin-top: 1rem;
       width: 100%;
       max-width: 600px;
- Noon, text-align: center;
+      text-align: center;
     }
 
     .goal-item { 
@@ -543,6 +545,8 @@
     .social-button.tiktok { background: var(--color-tiktok); }
     .social-button.kick { background: var(--color-kick); color: #000000; }
     .social-button.trovo { background: var(--color-trovo); }
+    .social-button.allmysocials { background: var(--color-allmysocials); }
+    .social-button.streamschedule { background: var(--color-streamschedule); }
 
     .social-button img {
       width: 24px;
@@ -670,14 +674,12 @@
           <li data-streamer="ramkrishanghoil" tabindex="0">ramkrishanghoil</li>
           <li data-streamer="zxckjsdv" tabindex="0">zxckjsdv</li>
           <li data-streamer="brbcompiling" tabindex="0">brbcompiling</li>
-          <li data-streamer="ogvkorg" tabindex="0">ogvkorg</li>
           <li data-streamer="TrevorMarksman" tabindex="0">TrevorMarksman</li>
           <li data-streamer="ValentineCoolio" tabindex="0">ValentineCoolio</li>
           <li data-streamer="LegacyMartian" tabindex="0">LegacyMartian</li>
           <li data-streamer="MovieByMacaffe" tabindex="0">MovieByMacaffe</li>
           <li data-streamer="BizaroPeter" tabindex="0">BizaroPeter</li>
           <li data-streamer="GynaWENS" tabindex="0">GynaWENS</li>
-          <li data-streamer="ggqporg" tabindex="0">ggqporg</li>
           <li data-streamer="xvbrznem" tabindex="0">xvbrznem</li>
         </ul>
       </div>
@@ -758,7 +760,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/xwlasxd' },
           tiktok: { webUrl: 'https://tiktok.com/@xwlasxd' },
           kick: { webUrl: 'https://kick.com/xwlasxd' },
-          trovo: { webUrl: 'https://trovo.live/xwlasxd' }
+          trovo: { webUrl: 'https://trovo.live/xwlasxd' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@xwlasxd' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@xwlasxd' }
         },
         startHour: 0,
         endHour: 3,
@@ -786,7 +790,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/HeavySamLifts' },
           tiktok: { webUrl: 'https://tiktok.com/@HeavySamLifts' },
           kick: { webUrl: 'https://kick.com/HeavySamLifts' },
-          trovo: { webUrl: 'https://trovo.live/HeavySamLifts' }
+          trovo: { webUrl: 'https://trovo.live/HeavySamLifts' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@HeavySamLifts' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@HeavySamLifts' }
         },
         startHour: 3,
         endHour: 6,
@@ -814,7 +820,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/ShadyPeterLive' },
           tiktok: { webUrl: 'https://tiktok.com/@ShadyPeterLive' },
           kick: { webUrl: 'https://kick.com/ShadyPeterLive' },
-          trovo: { webUrl: 'https://trovo.live/ShadyPeterLive' }
+          trovo: { webUrl: 'https://trovo.live/ShadyPeterLive' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@ShadyPeterLive' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@ShadyPeterLive' }
         },
         startHour: 6,
         endHour: 9,
@@ -842,7 +850,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/ramkrishanghoil' },
           tiktok: { webUrl: 'https://tiktok.com/@ramkrishanghoil' },
           kick: { webUrl: 'https://kick.com/ramkrishanghoil' },
-          trovo: { webUrl: 'https://trovo.live/ramkrishanghoil' }
+          trovo: { webUrl: 'https://trovo.live/ramkrishanghoil' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@ramkrishanghoil' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@ramkrishanghoil' }
         },
         startHour: 9,
         endHour: 12,
@@ -870,7 +880,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/zxckjsdv' },
           tiktok: { webUrl: 'https://tiktok.com/@zxckjsdv' },
           kick: { webUrl: 'https://kick.com/zxckjsdv' },
-          trovo: { webUrl: 'https://trovo.live/zxckjsdv' }
+          trovo: { webUrl: 'https://trovo.live/zxckjsdv' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@zxckjsdv' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@zxckjsdv' }
         },
         startHour: 12,
         endHour: 15,
@@ -898,38 +910,12 @@
           snapchat: { webUrl: 'https://snapchat.com/add/brbcompiling' },
           tiktok: { webUrl: 'https://tiktok.com/@brbcompiling' },
           kick: { webUrl: 'https://kick.com/brbcompiling' },
-          trovo: { webUrl: 'https://trovo.live/brbcompiling' }
+          trovo: { webUrl: 'https://trovo.live/brbcompiling' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@brbcompiling' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@brbcompiling' }
         },
         startHour: 15,
         endHour: 17,
-        streamingDays: [1, 3, 5, 0]
-      },
-      {
-        id: 'ogvkorg',
-        name: 'ogvkorg',
-        url: 'https://twitch.tv/ogvkorg',
-        discord: 'https://joindiscord.me/#ogvkorg',
-        avatar: 'https://i.postimg.cc/zfSxRGYF/Binge-Watchers-prfile-png-1.png',
-        tags: ['English', 'Variety', 'Community'],
-        youtube: 'https://youtube.com/@ogvkorg',
-        social: {
-          youtube: { webUrl: 'https://youtube.com/@ogvkorg' },
-          twitch: { webUrl: 'https://twitch.tv/ogvkorg' },
-          twitter: { webUrl: 'https://twitter.com/ogvkorg' },
-          facebook: { webUrl: 'https://facebook.com/ogvkorg' },
-          discord: { webUrl: 'https://joindiscord.me' },
-          telegram: { webUrl: 'https://t.me/ogvkorg' },
-          bluesky: { webUrl: 'https://bsky.app/profile/ogvkorg.bsky.social' },
-          threads: { webUrl: 'https://threads.net/@ogvkorg' },
-          instagram: { webUrl: 'https://instagram.com/ogvkorg' },
-          reddit: { webUrl: 'https://reddit.com/r/ogvkorg' },
-          snapchat: { webUrl: 'https://snapchat.com/add/ogvkorg' },
-          tiktok: { webUrl: 'https://tiktok.com/@ogvkorg' },
-          kick: { webUrl: 'https://kick.com/ogvkorg' },
-          trovo: { webUrl: 'https://trovo.live/ogvkorg' }
-        },
-        startHour: 17,
-        endHour: 18,
         streamingDays: [1, 3, 5, 0]
       },
       {
@@ -954,7 +940,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/TrevorMarksman' },
           tiktok: { webUrl: 'https://tiktok.com/@TrevorMarksman' },
           kick: { webUrl: 'https://kick.com/TrevorMarksman' },
-          trovo: { webUrl: 'https://trovo.live/TrevorMarksman' }
+          trovo: { webUrl: 'https://trovo.live/TrevorMarksman' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@TrevorMarksman' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@TrevorMarksman' }
         },
         startHour: 0,
         endHour: 3,
@@ -982,7 +970,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/ValentineCoolio' },
           tiktok: { webUrl: 'https://tiktok.com/@ValentineCoolio' },
           kick: { webUrl: 'https://kick.com/ValentineCoolio' },
-          trovo: { webUrl: 'https://trovo.live/ValentineCoolio' }
+          trovo: { webUrl: 'https://trovo.live/ValentineCoolio' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@ValentineCoolio' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@ValentineCoolio' }
         },
         startHour: 3,
         endHour: 6,
@@ -1010,7 +1000,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/LegacyMartian' },
           tiktok: { webUrl: 'https://tiktok.com/@LegacyMartian' },
           kick: { webUrl: 'https://kick.com/LegacyMartian' },
-          trovo: { webUrl: 'https://trovo.live/LegacyMartian' }
+          trovo: { webUrl: 'https://trovo.live/LegacyMartian' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@LegacyMartian' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@LegacyMartian' }
         },
         startHour: 6,
         endHour: 9,
@@ -1038,7 +1030,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/MovieByMacaffe' },
           tiktok: { webUrl: 'https://tiktok.com/@MovieByMacaffe' },
           kick: { webUrl: 'https://kick.com/MovieByMacaffe' },
-          trovo: { webUrl: 'https://trovo.live/MovieByMacaffe' }
+          trovo: { webUrl: 'https://trovo.live/MovieByMacaffe' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@MovieByMacaffe' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@MovieByMacaffe' }
         },
         startHour: 9,
         endHour: 12,
@@ -1066,7 +1060,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/BizaroPeter' },
           tiktok: { webUrl: 'https://tiktok.com/@BizaroPeter' },
           kick: { webUrl: 'https://kick.com/BizaroPeter' },
-          trovo: { webUrl: 'https://trovo.live/BizaroPeter' }
+          trovo: { webUrl: 'https://trovo.live/BizaroPeter' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@BizaroPeter' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@BizaroPeter' }
         },
         startHour: 12,
         endHour: 15,
@@ -1094,38 +1090,12 @@
           snapchat: { webUrl: 'https://snapchat.com/add/GynaWENS' },
           tiktok: { webUrl: 'https://tiktok.com/@GynaWENS' },
           kick: { webUrl: 'https://kick.com/GynaWENS' },
-          trovo: { webUrl: 'https://trovo.live/GynaWENS' }
+          trovo: { webUrl: 'https://trovo.live/GynaWENS' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@GynaWENS' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@GynaWENS' }
         },
         startHour: 15,
         endHour: 17,
-        streamingDays: [2, 4, 6]
-      },
-      {
-        id: 'ggqporg',
-        name: 'ggqporg',
-        url: 'https://twitch.tv/ggqporg',
-        discord: 'https://joindiscord.me/#ggqporg',
-        avatar: 'https://i.postimg.cc/zfSxRGYF/Binge-Watchers-prfile-png-1.png',
-        tags: ['English', 'Variety', 'Community'],
-        youtube: 'https://youtube.com/@ggqporg',
-        social: {
-          youtube: { webUrl: 'https://youtube.com/@ggqporg' },
-          twitch: { webUrl: 'https://twitch.tv/ggqporg' },
-          twitter: { webUrl: 'https://twitter.com/ggqporg' },
-          facebook: { webUrl: 'https://facebook.com/ggqporg' },
-          discord: { webUrl: 'https://joindiscord.me' },
-          telegram: { webUrl: 'https://t.me/ggqporg' },
-          bluesky: { webUrl: 'https://bsky.app/profile/ggqporg.bsky.social' },
-          threads: { webUrl: 'https://threads.net/@ggqporg' },
-          instagram: { webUrl: 'https://instagram.com/ggqporg' },
-          reddit: { webUrl: 'https://reddit.com/r/ggqporg' },
-          snapchat: { webUrl: 'https://snapchat.com/add/ggqporg' },
-          tiktok: { webUrl: 'https://tiktok.com/@ggqporg' },
-          kick: { webUrl: 'https://kick.com/ggqporg' },
-          trovo: { webUrl: 'https://trovo.live/ggqporg' }
-        },
-        startHour: 17,
-        endHour: 18,
         streamingDays: [2, 4, 6]
       },
       {
@@ -1150,7 +1120,9 @@
           snapchat: { webUrl: 'https://snapchat.com/add/xvbrznem' },
           tiktok: { webUrl: 'https://tiktok.com/@xvbrznem' },
           kick: { webUrl: 'https://kick.com/xvbrznem' },
-          trovo: { webUrl: 'https://trovo.live/xvbrznem' }
+          trovo: { webUrl: 'https://trovo.live/xvbrznem' },
+          allmysocials: { webUrl: 'https://allmysocials.link/@xvbrznem' },
+          streamschedule: { webUrl: 'https://streamschedule.me/@xvbrznem' }
         },
         startHour: 18,
         endHour: 24,
@@ -1178,7 +1150,9 @@
         snapchat: { icon: 'fa-brands fa-snapchat', label: 'Snapchat' },
         tiktok: { icon: 'fa-brands fa-tiktok', label: 'TikTok' },
         kick: { icon: 'https://i.postimg.cc/B6Kcwrxn/kick-logo.png', label: 'Kick' },
-        trovo: { icon: 'https://i.postimg.cc/7PSn1yHB/trovo-logo-1.png', label: 'Trovo' }
+        trovo: { icon: 'https://i.postimg.cc/7PSn1yHB/trovo-logo-1.png', label: 'Trovo' },
+        allmysocials: { icon: 'https://i.postimg.cc/PqvThX2t/allmysocials-link-logo.png', label: 'allmysocials' },
+        streamschedule: { icon: 'https://i.postimg.cc/bJX8w7B1/schedule-logo.png', label: 'streamschedule' }
       };
 
       function showToast(message) {
